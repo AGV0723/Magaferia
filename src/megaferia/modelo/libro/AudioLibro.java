@@ -17,9 +17,14 @@ public class AudioLibro extends Libro {
     private int duracion;
     private Narrador narrador;
 
-    public AudioLibro(String titulo, ArrayList<Autor> autores, String isbm, String genero, String formato, float valor, Editorial editorial) {
+    public AudioLibro(String titulo, ArrayList<Autor> autores, String isbm, String genero, String formato, float valor, Editorial editorial, int duracion, Narrador narrador) {
         super(titulo, autores, isbm, genero, formato, valor, editorial);
+        this.duracion = duracion;
+        this.narrador = narrador;
+        
+        this.narrador.addLibro(this);
     }
+
     
     public int getDuracion() {
         return duracion;

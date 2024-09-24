@@ -16,8 +16,11 @@ public class LibroDigital extends Libro {
     private boolean hasHipervinculo;
     private ArrayList<String> hiperviculos;
     
-    public LibroDigital(String titulo, ArrayList<Autor> autores, String isbm, String genero, String formato, float valor, Editorial editorial) {
+    public LibroDigital(String titulo, ArrayList<Autor> autores, String isbm, String genero, String formato, float valor, Editorial editorial, boolean hasHipervinvulo,ArrayList<String> hiperviculos) {
         super(titulo, autores, isbm, genero, formato, valor, editorial);
+        this.hasHipervinculo = hasHipervinvulo;
+        this.hiperviculos = hiperviculos;
+        
     }
 
     public boolean isHasHipervinculo() {

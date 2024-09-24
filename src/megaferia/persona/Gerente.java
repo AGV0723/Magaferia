@@ -16,6 +16,7 @@ public class Gerente extends Persona {
 
     public Gerente(String nombre, String cedula) {
         super(nombre, cedula);
+        this.editorial = null;
     }
 
     public Editorial getEditorial() {
@@ -25,5 +26,7 @@ public class Gerente extends Persona {
     public void setEditorial(Editorial editorial) {
         this.editorial = editorial;
     }
+
+   
     
 }

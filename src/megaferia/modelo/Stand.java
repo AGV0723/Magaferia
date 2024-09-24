@@ -11,14 +11,19 @@ import java.util.ArrayList;
  * @author adrianonzalezrubiovilla
  */
 public class Stand {
+    
+    private static int idCount = 0;
+            
     private int id;
     private float precio;
     private ArrayList<Editorial> editoriales;
 
-    public Stand(int id, float precio, ArrayList<Editorial> editoriales) {
-        this.id = id;
+    public Stand(float precio){
+        this.id = Stand.idCount;
         this.precio = precio;
-        this.editoriales = editoriales;
+        this.editoriales = new ArrayList<>();
+        
+        Stand.idCount++;
     }
 
     public int getId() {

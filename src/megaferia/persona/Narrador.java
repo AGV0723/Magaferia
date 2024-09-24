@@ -6,6 +6,7 @@ package megaferia.persona;
 
 import java.util.ArrayList;
 import megaferia.modelo.libro.AudioLibro;
+import megaferia.modelo.libro.Libro;
 
 /**
  *
@@ -14,16 +15,24 @@ import megaferia.modelo.libro.AudioLibro;
 public class Narrador extends Persona {
     private ArrayList<AudioLibro> libros;
 
-    public Narrador(String nombre, String cedula) {
+    public Narrador(String nombre, String cedula, ArrayList<AudioLibro> audioLibros) {
         super(nombre, cedula);
+        this.libros = audioLibros;
+    }
+    public boolean addLibro(AudioLibro libro) {
+        if (!this.libros.contains(libro)) {
+            this.libros.add(libro);
+            return true;
+        }
+        return false;
     }
 
     public ArrayList<AudioLibro> getLibros() {
         return libros;
     }
 
-    public void setLibros(ArrayList<AudioLibro> libros) {
-        this.libros = libros;
+    public void setLibros(ArrayList<AudioLibro> audioLibros) {
+        this.libros = audioLibros;
     }
     
 }

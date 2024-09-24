@@ -16,8 +16,9 @@ public class Autor extends Persona {
 
     private ArrayList<Libro> libros;
 
-    public Autor(String nombre, String cedula) {
+    public Autor(String nombre, String cedula, ArrayList<Libro> libros) {
         super(nombre, cedula);
+        this.libros = new ArrayList<>();
     }
 
     public ArrayList<Libro> getLibros() {
@@ -28,13 +29,12 @@ public class Autor extends Persona {
         this.libros = libros;
     }
 
-    public int obtenerNumEditoriales() {
-    ArrayList<Editorial> editoriales = new ArrayList<>();
-    for (Libro libro : this.libros) {
-        if (!editoriales.contains(libro.getEditorial())) {
-            editoriales.add(libro.getEditorial());
+    public boolean addLibro(Libro libro) {
+        if (!this.libros.contains(libro)) {
+            this.libros.add(libro);
+            return true;
         }
+        return false;
     }
-    return editoriales.size();
 }
-}
+

@@ -23,12 +23,19 @@ public abstract class Libro {
 
     public Libro(String titulo, ArrayList<Autor> autores, String isbm, String genero, String formato, float valor, Editorial editorial) {
         this.titulo = titulo;
-        this.autores = autores;
+        this.autores = autores; // Relacion libro - autores
         this.isbm = isbm;
         this.genero = genero;
         this.formato = formato;
         this.valor = valor;
-        this.editorial = editorial;
+        this.editorial = editorial;  // Relacion libro editorial
+        
+        
+        for (Autor autor : this.autores ){ // Relacion autor - libro
+            autor.addLibro(this);
+        }
+        
+        this.editorial.addLibro(this); // Relacion editorial - libro 
     }
 
     public String getTitulo() {
