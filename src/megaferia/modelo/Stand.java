@@ -25,7 +25,12 @@ public class Stand {
         
         Stand.idCount++;
     }
-
+    
+    @Override
+    public String toString(){
+        return getClass().getSimpleName() + "(" + id + ", " + precio + ")";
+    }
+    
     public int getId() {
         return id;
     }
