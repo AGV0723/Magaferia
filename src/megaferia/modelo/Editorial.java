@@ -6,7 +6,7 @@ package megaferia.modelo;
 
 import java.util.ArrayList;
 import megaferia.modelo.libro.Libro;
-import megaferia.perona.Autor;
+import megaferia.persona.Autor;
 
 /**
  *
