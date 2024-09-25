@@ -14,7 +14,7 @@ public class Gerente extends Persona {
 
     private Editorial editorial;
 
-    public Gerente(String nombre, String cedula) {
+    public Gerente(String nombre, int cedula) {
         super(nombre, cedula);
         this.editorial = null;
     }

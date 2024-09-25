@@ -33,6 +33,13 @@ public class Editorial {
         this.gerente.setEditorial(this);
         
     }
+    public boolean addStandl(Stand stand) {
+        if (!this.stands.contains(stand)) {
+            this.stands.add(stand);
+            return true;
+        }
+        return false;
+    }
 
     public boolean addLibro(Libro libro) {
         if (!this.libros.contains(libro)) {
@@ -42,6 +49,11 @@ public class Editorial {
         return false;
     }
 
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + "("  + this.nit + ", " + this.nombre + ')';
+    }
+    
     public String getNit() {
         return nit;
     }
@@ -81,4 +93,13 @@ public class Editorial {
     public void setStands(ArrayList<Stand> stands) {
         this.stands = stands;
     }
+
+    public Gerente getGerente() {
+        return gerente;
+    }
+
+    public void setGerente(Gerente gerente) {
+        this.gerente = gerente;
+    }
+    
 }

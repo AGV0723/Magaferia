@@ -16,19 +16,55 @@ public class Megaferia {
     private ArrayList<Stand> stands;
     private ArrayList<Editorial> editoriales;
 
-
-    public Megaferia () {
+    public Megaferia() {
         this.stands = new ArrayList<>();
         this.editoriales = new ArrayList<>();
     }
-    
-    public void createStand (float precio) {
-        this.stands.add(new Stand(precio));
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + "(" + ')';
     }
     
-    public void verifyStands (){
+
+
+    public void createStand(float precio) {
+        this.stands.add(new Stand(precio));
+    }
+
+    public void verifyStands() {
         for (Stand stand : this.stands) {
-            System.out.println(stands);
+            System.out.println(stand + " -> " + stand.getEditoriales());
+        }
+    }
+
+    public boolean addEditorial(Editorial editorial) {
+        if (!this.editoriales.contains(editorial)) {
+            this.editoriales.add(editorial);
+            return true;
+        }
+        return false;
+    }
+
+    private Stand getStandById(int StandId) {
+        for (Stand stand : this.stands) {
+            if (stand.getId() == StandId) {
+                return stand;
+            }
+        }
+        return null;
+    }
+
+    public void assignStandEditorial(ArrayList<Integer> standsIds, ArrayList<Editorial> editoriales) {
+        for (Editorial editorial : editoriales) {
+            this.addEditorial(editorial);
+            for (Integer standId : standsIds) {
+                Stand stand  = this.getStandById(standId);
+                if (stand != null) {
+                    editorial.addStandl(stand);
+                    stand.addEditorial(editorial);
+                }
+            }
         }
     }
 

@@ -15,7 +15,7 @@ import megaferia.modelo.libro.Libro;
 public class Narrador extends Persona {
     private ArrayList<AudioLibro> libros;
 
-    public Narrador(String nombre, String cedula, ArrayList<AudioLibro> audioLibros) {
+    public Narrador(String nombre, int cedula, ArrayList<AudioLibro> audioLibros) {
         super(nombre, cedula);
         this.libros = audioLibros;
     }

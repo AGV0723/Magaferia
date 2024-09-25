@@ -10,9 +10,9 @@ package megaferia.persona;
  */
 public abstract class Persona {
     protected String nombre;
-    protected String cedula;
+    protected int cedula;
 
-    public Persona(String nombre, String cedula) {
+    public Persona(String nombre, int cedula) {
         this.nombre = nombre;
         this.cedula = cedula;
     }
@@ -25,12 +25,17 @@ public abstract class Persona {
         this.nombre = nombre;
     }
 
-    public String getCedula() {
+    public int getCedula() {
         return cedula;
     }
 
-    public void setCedula(String cedula) {
+    public void setCedula(int cedula) {
         this.cedula = cedula;
+    }
+
+    @Override
+    public String toString() {
+      return getClass().getSimpleName() + "(" + this.nombre + ", " + this.cedula + ")" ;
     }
     
 }

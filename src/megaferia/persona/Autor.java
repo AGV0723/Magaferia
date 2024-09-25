@@ -16,7 +16,7 @@ public class Autor extends Persona {
 
     private ArrayList<Libro> libros;
 
-    public Autor(String nombre, String cedula, ArrayList<Libro> libros) {
+    public Autor(String nombre, int cedula, ArrayList<Libro> libros) {
         super(nombre, cedula);
         this.libros = new ArrayList<>();
     }
